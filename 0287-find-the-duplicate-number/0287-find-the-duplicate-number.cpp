@@ -3,15 +3,11 @@
 class Solution {
 public:
     int findDuplicate(std::vector<int>& nums) {
+        unordered_map<int, int>mp;
         int n = nums.size();
-        std::vector<int> arr(n + 1, 0);
-        for (int i = 0; i < n; i++) {
-            arr[nums[i]]++;
-        }
-        for (int i = 0; i < arr.size(); i++) {
-            if (arr[i] > 1) {
-                return i;
-            }
+        for(int i=0; i<n; i++){
+            mp[nums[i]]++;
+            if(mp[nums[i]]==2) return nums[i];
         }
         return -1;
     }
