@@ -1,13 +1,14 @@
-import java.util.HashMap;
-
 class Solution {
     public int findDuplicate(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int n = nums.length;
-        for (int i = 0; i < n; i++) {
-            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
-            if (map.get(nums[i]) == 2)
-                return nums[i];
+        int n=nums.length;
+        int arr[]=new int[n+1];
+        for(int i=0;i<n;i++){
+            arr[nums[i]]++;
+        }
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>1){
+                return i;
+            }
         }
         return -1;
     }
