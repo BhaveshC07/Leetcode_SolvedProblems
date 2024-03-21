@@ -9,7 +9,6 @@ class Solution {
             if(s.charAt(i) != ' '){
             a++;
             }
-
             else
             break;
         }
