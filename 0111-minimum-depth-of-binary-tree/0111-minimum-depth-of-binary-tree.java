@@ -18,24 +18,24 @@ class Solution {
     int count = 0;
     int ans = Integer.MAX_VALUE;
 
-    public void preorder(TreeNode root) {
+    public void mins(TreeNode root) {
         if (root == null) {
             return;
         }
         count++;
-        if (root.left == null && root.right == null) {
-            ans = Math.min(ans, count);
+        if (root.left==null && root.right==null) {
+            ans=Math.min(ans, count);
         }
-        preorder(root.left);
-        preorder(root.right);
+        mins(root.left);
+        mins(root.right);
         count--;
     }
 
     public int minDepth(TreeNode root) {
-        if (root == null) {
+        if(root==null) {
             return 0;
         }
-        preorder(root);
+        mins(root);
         return ans;
     }
 }
