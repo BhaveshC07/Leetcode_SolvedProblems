@@ -9,9 +9,6 @@ class Solution {
             }
             arr[i]=diff;
         }
-        for(int i=0;i<n;i++){
-            System.out.print(arr[i]+" ");
-        }
         int price=0;
         for(int i=0;i<n;i++){
             price+=arr[i];
